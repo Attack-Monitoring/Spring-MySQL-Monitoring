@@ -1,11 +1,21 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=41ab5d&height=300&section=header&text=Spring-MySQL-Monitoring-System&fontSize=50&fontColor=FFFFFF&animation=fadeIn&width=1200" width="1200" />
 
+## 📚 목차
 
-# 🚩 프로젝트 개요
+- [🎈 팀원 소개](#-팀원-소개)
+- [📊 리눅스 서버 모니터링 시스템 구축 & 부하 테스트 프로젝트](#-리눅스-서버-모니터링-시스템-구축--부하-테스트-프로젝트)
+  - [📝 개요](#-개요)
+  - [🔧 기술 스택](#-기술-스택)
+  - [🛠️ 구성 요소](#-구성-요소)
+  - [🔧 설치 및 설정 과정](#-설치-및-설정-과정)
+  - [🚀 부하 테스트](#-부하-테스트)
+  - [📸 주요 대시보드 스크린샷 (예시)](#-주요-대시보드-스크린샷-예시)
+  - [✅ 결과 및 기대 효과](#-결과-및-기대-효과)
+  - [📌 기타](#-기타)
 
 
-<br>
-<br>
+
+# 🎈  팀원 소개
 
 |<img src="https://github.com/DoomchitYJ.png" width="220" />|<img src="https://github.com/wns5120.png" width="220" />|<img src="https://github.com/EOTAEGYU.png" width="220" />|<img src="https://github.com/letsgojh0810.png" width="220" />|
 |:-:|:-:|:-:|:-:|
@@ -15,9 +25,23 @@
 
 # 📊 리눅스 서버 모니터링 시스템 구축 & 부하 테스트 프로젝트
 
+
 ## 📝 개요
 
 이 프로젝트는 리눅스 환경에서 Prometheus와 Grafana를 활용하여 시스템 및 데이터베이스 상태를 **실시간 모니터링**하고, Spring 애플리케이션 및 MySQL에 **부하 테스트(Stress Test)**를 수행하여 모니터링 환경의 유효성을 검증하는 데 목적이 있습니다.
+
+<br> 
+
+## 🔧 기술 스택 
+
+<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"><img src="https://img.shields.io/badge/prometheus-000000?style=for-the-badge&logo=prometheus&logoColor=orange">
+<img src="https://img.shields.io/badge/grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white">
+<img src="https://img.shields.io/badge/node--exporter-85EA2D?style=for-the-badge">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+<img src="https://img.shields.io/badge/stress%20test-FF0000?style=for-the-badge">
+
+<br>
 
 ---
 
