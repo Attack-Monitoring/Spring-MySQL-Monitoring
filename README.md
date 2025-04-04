@@ -34,7 +34,8 @@
 
 ## 🔧 기술 스택 
 
-<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"><img src="https://img.shields.io/badge/prometheus-000000?style=for-the-badge&logo=prometheus&logoColor=orange">
+<img src="https://img.shields.io/badge/ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
+<img src="https://img.shields.io/badge/prometheus-000000?style=for-the-badge&logo=prometheus&logoColor=orange">
 <img src="https://img.shields.io/badge/grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white">
 <img src="https://img.shields.io/badge/node--exporter-85EA2D?style=for-the-badge">
 <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
@@ -43,7 +44,7 @@
 
 <br>
 
----
+
 
 ## 🛠️ 구성 요소
 
@@ -56,7 +57,7 @@
 | 🐬 MySQL Exporter| MySQL 데이터베이스 모니터링 지표 수집                                  |
 | 🌱 Spring App    | 테스트 대상 애플리케이션                                               |
 
----
+<br>
 
 ## 🔧 설치 및 설정 과정
 
@@ -73,19 +74,42 @@
 - **Node Exporter**: 서버의 리소스 상태 수집
 - **MySQL Exporter**: MySQL 상태 및 성능 데이터 수집
 
----
+<br>
 
 ## 🚀 부하 테스트
 
-### 🌐 Spring 애플리케이션 부하 테스트
+### 🌐 1. Spring 애플리케이션 부하 테스트
 - Spring Boot 애플리케이션 서버에 배포
-- `Apache Benchmark (ab)` 또는 `JMeter` 등 부하 도구 사용
+- `JMeter` 이용하여 HTTP Request 발생
 - 부하 발생 중 Grafana로 실시간 리소스 변화 확인
 
-### 🐬 MySQL 부하 테스트
+<br>
+
+**테스트 시나리오: http://localhost:8080/fisa1 으로 GET 1000개 thread 보내기**
+
+![image](https://github.com/user-attachments/assets/1c02b639-03a8-4cfa-829b-131fa2e713ed)
+
+## 📸 주요 대시보드 스크린샷 (Grafana Dashboard Template #4701)
+
+![image](https://github.com/user-attachments/assets/e058dfed-b7f2-4ea4-9ea6-79f6a8528835)
+
+급격히 처리량이 늘어난 것을 볼 수 있다.
+
+![image](https://github.com/user-attachments/assets/49c6cebc-f2eb-457c-bba3-0742786b8f76)
+
+cpu 사용량과 thread 상태도 확인할 수 있다.
+
+![image](https://github.com/user-attachments/assets/90caeeb6-7301-4f23-8582-73d7168020bf)
+
+위 그림은 스프링 앱과 연동된 MySQL DB의 대시보드에서 본 Connection 현황이다.
+
+---
+
+### 🐬 2. MySQL 부하 테스트
 - 대량의 INSERT/SELECT 쿼리를 반복 실행
 - 쿼리 처리량, 연결 수, InnoDB 상태 등 모니터링
 
+**테스트 시나리오**
 
 ```sql
 DELIMITER $$
@@ -110,34 +134,25 @@ DELIMITER ;
 ```
 
 
----
-
-## 📸 주요 대시보드 스크린샷
-
-
-![image](https://github.com/user-attachments/assets/9826b614-7359-4ee6-9578-2c4b5227423a)
+## 📸 주요 대시보드 스크린샷 (Grafana Dashboard Template #7362)
 
 📊 MySQL Questions 모니터링
 
- 이 그래프는 **MySQL Questions**(쿼리 실행 수)를 모니터링
+![image](https://github.com/user-attachments/assets/9826b614-7359-4ee6-9578-2c4b5227423a)
+
 
 <br>
-
-![image](https://github.com/user-attachments/assets/12132637-8b11-4f67-ac5a-2383f0379262)
 
 📡 MySQL 네트워크 트래픽
 
-이 그래프는 **MySQL의 네트워크 입출력 트래픽**을 모니터링
+![image](https://github.com/user-attachments/assets/12132637-8b11-4f67-ac5a-2383f0379262)
 
 <br>
 
+🔎 MySQL Select 유형 분석
 
 ![image](https://github.com/user-attachments/assets/70a184ba-6789-45be-8ea2-16a2c5789e7b)
 
-
-🔎 MySQL Select 유형 분석
-
-이 그래프는 **MySQL에서 실행된 SELECT 쿼리 유형**을 모니터링하는 지표입니다.
 
 ---
 
