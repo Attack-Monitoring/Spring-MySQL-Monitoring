@@ -15,7 +15,7 @@
 
 
 
-# 🎈  팀원 소개
+# 🎈 팀원 소개
 
 |<img src="https://github.com/DoomchitYJ.png" width="220" />|<img src="https://github.com/wns5120.png" width="220" />|<img src="https://github.com/EOTAEGYU.png" width="220" />|<img src="https://github.com/letsgojh0810.png" width="220" />|
 |:-:|:-:|:-:|:-:|
@@ -86,11 +86,58 @@
 - 대량의 INSERT/SELECT 쿼리를 반복 실행
 - 쿼리 처리량, 연결 수, InnoDB 상태 등 모니터링
 
+
+```sql
+DELIMITER $$
+
+CREATE PROCEDURE generate_test_data()
+BEGIN
+  DECLARE i INT DEFAULT 1; -- 반복을 위한 변수 i 선언
+  WHILE i <= 10000 DO
+    INSERT INTO test_data (name, email, age, created_at)
+    VALUES (
+      CONCAT('user', i),                     -- 이름: user1 ~ user10000
+      CONCAT('user', i, '@example.com'),    -- 이메일: user1@example.com ~ ...
+      FLOOR(18 + (RAND() * 50)),            -- 나이: 18 ~ 67 사이 랜덤
+      NOW()                                 -- 현재 시간 입력
+    );
+    SET i = i + 1; -- i 값을 1씩 증가
+  END WHILE;
+END$$
+
+DELIMITER ;
+
+```
+
+
 ---
 
-## 📸 주요 대시보드 스크린샷 (예시)
+## 📸 주요 대시보드 스크린샷
 
-> 필요 시 여기에 Grafana 대시보드의 캡처 이미지를 추가하세요.
+
+![image](https://github.com/user-attachments/assets/9826b614-7359-4ee6-9578-2c4b5227423a)
+
+📊 MySQL Questions 모니터링
+
+ 이 그래프는 **MySQL Questions**(쿼리 실행 수)를 모니터링
+
+<br>
+
+![image](https://github.com/user-attachments/assets/12132637-8b11-4f67-ac5a-2383f0379262)
+
+📡 MySQL 네트워크 트래픽
+
+이 그래프는 **MySQL의 네트워크 입출력 트래픽**을 모니터링
+
+<br>
+
+
+![image](https://github.com/user-attachments/assets/70a184ba-6789-45be-8ea2-16a2c5789e7b)
+
+
+🔎 MySQL Select 유형 분석
+
+이 그래프는 **MySQL에서 실행된 SELECT 쿼리 유형**을 모니터링하는 지표입니다.
 
 ---
 
